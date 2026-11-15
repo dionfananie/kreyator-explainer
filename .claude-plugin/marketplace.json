@@ -1,0 +1,7 @@
+{
+  "name": "whiteboard-explainer",
+  "owner": { "name": "Dion" },
+  "plugins": [
+    { "name": "whiteboard-explainer", "source": "./", "description": "Animated whiteboard explainers in one fixed hand-drawn style, rendered to MP4." }
+  ]
+}

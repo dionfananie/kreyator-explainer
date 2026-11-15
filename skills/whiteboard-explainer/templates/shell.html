@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>/*@TITLE*/</title>
+<style>
+/*@FONTS*/
+html, body { margin: 0; height: 100%; background: #111; overflow: hidden; font: 13px system-ui, sans-serif; color: #ddd; }
+#stage { position: absolute; inset: 0 0 44px 0; display: flex; align-items: center; justify-content: center; }
+#c { width: 100%; height: 100%; object-fit: contain; display: block; }
+#bar { position: absolute; left: 0; right: 0; bottom: 0; height: 44px; display: flex; align-items: center; gap: 10px; padding: 0 12px; background: #1b1b1b; box-sizing: border-box; }
+#bar button { background: #2c2c2c; color: #eee; border: 0; border-radius: 6px; padding: 6px 10px; cursor: pointer; font: inherit; }
+#bar input[type=range] { flex: 1; }
+#time { font-variant-numeric: tabular-nums; min-width: 92px; text-align: right; }
+body.render #bar { display: none; } body.render #stage { inset: 0; }
+</style>
+</head>
+<body>
+<div id="stage"><canvas id="c" width="1280" height="720"></canvas></div>
+<div id="bar">
+  <button id="play">▶ Play</button>
+  <input id="scrub" type="range" min="0" max="1000" value="0">
+  <span id="time">0.00 / 0.00</span>
+  <button id="snd">🔊 Sound on</button>
+  <button id="loop">⟲ Loop on</button>
+</div>
+<script>
+/*@HARNESS*/
+</script>
+<script>
+/*@SOUND*/
+</script>
+<script>
+/*@WB*/
+</script>
+<script>
+/*@PIECE*/
+</script>
+<script>
+(() => {
+  const W = 1280, H_ = 720, FPS = 30;
+  const RENDER = location.search.includes('render');
+  if (RENDER) document.body.classList.add('render');
+  const cv = document.getElementById('c'), ctx = cv.getContext('2d', { willReadFrequently: true });
+  const DURATION = PIECE.DURATION;
+  const scoreSound = (k) => PIECE.score(k);
+  // contract for players and renderers
+  window.DURATION = DURATION; window.scoreSound = scoreSound;
+  window.FPS = FPS; window.FRAMES = Math.round(DURATION * FPS); window.CUES = PIECE.CUES || [];
+  window.seek = (t) => {
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.filter = 'none';
+    WB.render(ctx, W, H_, Math.max(0, Math.min(DURATION, t)), PIECE);
+  };
+  window.draw = (f) => window.seek(f / FPS);
+  window.SCORE = (ac) => scoreSound(SOUND.kit(ac, { voiceover: false }));
+  window.READY = (async () => {
+    try { await Promise.all(['400 66px "Permanent Marker"', '700 38px "Kalam"'].map((f) => document.fonts.load(f, 'AaZz09'))); await document.fonts.ready; } catch (e) {}
+  })();
+  if (RENDER) return;
+
+  // ---------- player ----------
+  const $ = (id) => document.getElementById(id);
+  let cur = 0, playing = false, soundOn = true, loop = true, last = 0, stopSound = null;
+  const stopS = () => { if (stopSound) { stopSound(); stopSound = null; } };
+  const startS = () => { stopS(); if (playing && soundOn) stopSound = SOUND.live(scoreSound, cur, { voiceover: false }); };
+  const show = () => { window.seek(cur); $('scrub').value = Math.round(cur / DURATION * 1000); $('time').textContent = cur.toFixed(2) + ' / ' + DURATION.toFixed(2); };
+  const tick = (now) => {
+    if (playing) {
+      cur += (now - last) / 1000; last = now;
+      if (cur >= DURATION) { if (loop) { cur = 0; startS(); } else { cur = DURATION; playing = false; stopS(); $('play').textContent = '▶ Play'; } }
+      show();
+    }
+    requestAnimationFrame(tick);
+  };
+  $('play').onclick = () => { playing = !playing; $('play').textContent = playing ? '❚❚ Pause' : '▶ Play'; last = performance.now(); if (playing) { if (cur >= DURATION) cur = 0; startS(); } else stopS(); };
+  $('scrub').oninput = (e) => { cur = e.target.value / 1000 * DURATION; stopS(); show(); if (playing) startS(); };
+  $('snd').onclick = () => { soundOn = !soundOn; $('snd').textContent = soundOn ? '🔊 Sound on' : '🔇 Sound off'; if (soundOn) startS(); else stopS(); };
+  $('loop').onclick = () => { loop = !loop; $('loop').textContent = loop ? '⟲ Loop on' : '⟲ Loop off'; };
+  window.addEventListener('keydown', (e) => { if (e.code === 'Space') { e.preventDefault(); $('play').click(); } });
+  window.READY.then(() => { show(); requestAnimationFrame(tick); });
+})();
+</script>
+</body>
+</html>

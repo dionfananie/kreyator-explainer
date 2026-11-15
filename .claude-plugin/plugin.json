@@ -1,0 +1,8 @@
+{
+  "name": "whiteboard-explainer",
+  "version": "1.0.0",
+  "description": "Animated whiteboard explainers in one fixed hand-drawn style: dry-erase marker on a glossy board, felt-eraser scene changes, synthesized marker sound. Write only the story; render to MP4.",
+  "author": { "name": "Dion" },
+  "license": "MIT",
+  "keywords": ["whiteboard", "explainer", "canvas", "hand-drawn", "web-audio", "video", "claude-skill"]
+}
