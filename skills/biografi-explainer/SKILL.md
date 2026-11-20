@@ -1,10 +1,10 @@
 ---
-name: kreyator-explainer
-description: Paket pembuat video explainer pendek (Reels/TikTok/Shorts) untuk bang.oppia dengan dua gaya — biografi motion graphic editorial (foto tokoh, render cepat Group C, 75 dtk) dan whiteboard tangan (spidol & penghapus). Gunakan saat diminta membuat, mengulang, atau merevisi video explainer/biografi/whiteboard dari topik atau naskah, termasuk naskah dari Content Creator.
+name: biografi-explainer
+description: Pembuat video explainer pendek (Reels/TikTok/Shorts) untuk bang.oppia dengan dua gaya — biografi motion graphic editorial (foto tokoh, render cepat Group C, 75 dtk) dan whiteboard tangan (spidol & penghapus). Gunakan saat diminta membuat, mengulang, atau merevisi video explainer/biografi/whiteboard dari topik atau naskah, termasuk naskah dari Content Creator.
 example-prompt: Buat video dari naskah biografi terbaru Content Creator, 75 detik, VO Jefri v4, jangan dipublish.
 ---
 
-# Kreyator Explainer
+# Biografi Explainer
 
 Satu skill, dua gaya video. File ini berisi aturan bersama dan cara memilih gaya; detail tiap gaya ada di `styles/` dan **dibaca hanya saat gaya itu dipakai**.
 

@@ -1,7 +1,7 @@
 {
-  "name": "whiteboard-explainer",
+  "name": "kreyator-explainer",
   "owner": { "name": "Dion" },
   "plugins": [
-    { "name": "whiteboard-explainer", "source": "./", "description": "Animated whiteboard explainers in one fixed hand-drawn style, rendered to MP4." }
+    { "name": "kreyator-explainer", "source": "./", "description": "Short explainer video skills: biografi-explainer and whiteboard-explainer, rendered to MP4." }
   ]
 }

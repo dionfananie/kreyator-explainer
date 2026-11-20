@@ -1,8 +1,8 @@
 {
-  "name": "whiteboard-explainer",
-  "version": "1.0.0",
-  "description": "Animated whiteboard explainers in one fixed hand-drawn style: dry-erase marker on a glossy board, felt-eraser scene changes, synthesized marker sound. Write only the story; render to MP4.",
+  "name": "kreyator-explainer",
+  "version": "1.1.0",
+  "description": "Short explainer video skills for Reels, TikTok and YouTube Shorts: biografi-explainer (editorial motion graphic biographies, fast Group C render) and whiteboard-explainer (hand-drawn dry-erase marker style). Rendered to MP4.",
   "author": { "name": "Dion" },
   "license": "MIT",
-  "keywords": ["whiteboard", "explainer", "canvas", "hand-drawn", "web-audio", "video", "claude-skill"]
+  "keywords": ["explainer", "biografi", "biography", "whiteboard", "motion-graphics", "short-form", "video", "claude-skill"]
 }

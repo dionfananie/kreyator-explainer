@@ -1,18 +1,18 @@
 # kreyator-explainer
 
-Agent skills for short explainer videos (Instagram Reels, TikTok, YouTube Shorts). The repo has two skills:
+Package of agent skills for short explainer videos (Instagram Reels, TikTok, YouTube Shorts). `kreyator-explainer` is the package (plugin) name. It holds two skills:
 
 | Skill | What it does |
 |---|---|
-| [`skills/kreyator-explainer`](skills/kreyator-explainer/) | Umbrella skill. It picks a style, applies the shared rules (format, duration, VO, cover, delivery) and routes to the style guide. |
+| [`skills/biografi-explainer`](skills/biografi-explainer/) | Main skill. It picks a style, applies the shared rules (format, duration, VO, cover, delivery) and routes to the style guide. |
 | [`skills/whiteboard-explainer`](skills/whiteboard-explainer/) | Hand-drawn whiteboard engine (libs, fonts, build/render scripts) used by the whiteboard style. |
 
 ## Styles
 
 | Style | Look | Guide |
 |---|---|---|
-| **Biografi editorial** | 9:16 motion graphic: photo cards, Anton tags, wipes, burn-in subtitles. Fast "Group C" render (DOM layers exported once, composited with canvas, piped to ffmpeg). | `skills/kreyator-explainer/styles/biografi.md` |
-| **Whiteboard** | Dry-erase marker on a glossy board, marker in hand, felt-eraser scene changes, synthesized marker sound. | `skills/kreyator-explainer/styles/whiteboard.md` |
+| **Biografi editorial** | 9:16 motion graphic: photo cards, Anton tags, wipes, burn-in subtitles. Fast "Group C" render (DOM layers exported once, composited with canvas, piped to ffmpeg). | `skills/biografi-explainer/styles/biografi.md` |
+| **Whiteboard** | Dry-erase marker on a glossy board, marker in hand, felt-eraser scene changes, synthesized marker sound. | `skills/biografi-explainer/styles/whiteboard.md` |
 
 ## Examples
 
@@ -42,13 +42,13 @@ Photo credits in the biografi example: Najwa Shihab/Wikimedia Commons (CC BY 3.0
 npx skills add dionfananie/kreyator-explainer
 # or, in Claude Code
 /plugin marketplace add dionfananie/kreyator-explainer
-/plugin install whiteboard-explainer
+/plugin install kreyator-explainer
 ```
 
 Requirements:
 
 - Node 18+, ffmpeg/ffprobe, and Chrome or Chromium.
-- Biografi style: run `npm install` in a copy of `skills/kreyator-explainer/biografi/scripts/` (installs rustwright, @napi-rs/canvas, @fontsource/anton, @fontsource/inter and playwright-core). Optional env vars: `FFMPEG_DIR`, `FFMPEG`, `RUSTWRIGHT_CHROMIUM`. `build-project.ps1` needs PowerShell.
+- Biografi style: run `npm install` in a copy of `skills/biografi-explainer/biografi/scripts/` (installs rustwright, @napi-rs/canvas, @fontsource/anton, @fontsource/inter and playwright-core). Optional env vars: `FFMPEG_DIR`, `FFMPEG`, `RUSTWRIGHT_CHROMIUM`. `build-project.ps1` needs PowerShell.
 - Whiteboard style: run `npm i playwright-core` in your work folder.
 - ElevenLabs access for the voice-over.
 
@@ -77,7 +77,7 @@ Biografi flow, in short (full steps in `styles/biografi.md`):
 
 ```
 skills/
-  kreyator-explainer/
+  biografi-explainer/
     SKILL.md                 router + shared rules
     styles/biografi.md       editorial biography steps and pitfalls
     styles/whiteboard.md     whiteboard steps
