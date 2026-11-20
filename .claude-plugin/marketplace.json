@@ -2,6 +2,6 @@
   "name": "kreyator-explainer",
   "owner": { "name": "Dion" },
   "plugins": [
-    { "name": "kreyator-explainer", "source": "./", "description": "Short explainer video skills: biografi-explainer and whiteboard-explainer, rendered to MP4." }
+    { "name": "kreyator-explainer", "source": "./", "description": "Short explainer video skills: biografi-explainer, vox-explainer and whiteboard-explainer, rendered to MP4." }
   ]
 }

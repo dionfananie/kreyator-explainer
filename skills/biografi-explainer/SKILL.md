@@ -8,7 +8,7 @@ example-prompt: Buat video dari naskah biografi terbaru Content Creator, 75 deti
 
 Video biografi editorial 9:16. File ini berisi aturan; langkah lengkap per video ada di `styles/biografi.md` (script di `biografi/scripts/`, contoh di `biografi/references/`).
 
-Bukan untuk gaya whiteboard (gambar tangan, spidol, papan tulis, penjelasan konsep/angka tanpa foto): pakai skill `whiteboard-explainer` di paket `kreyator-explainer` yang sama. Bila tidak jelas gaya mana yang diminta, tanyakan satu kali.
+Bukan untuk gaya whiteboard (gambar tangan, spidol, papan tulis, penjelasan konsep/angka tanpa foto): pakai skill `whiteboard-explainer` di paket `kreyator-explainer` yang sama. Untuk explainer isu/data bergaya kolase kertas koran ala Vox, pakai `vox-explainer`. Bila tidak jelas gaya mana yang diminta, tanyakan satu kali.
 
 ## Aturan
 - **Format:** 1080×1920, 9:16, 30 fps, MP4 H.264 + AAC, subtitle burn-in, safe zone atas 15% & bawah 20%.

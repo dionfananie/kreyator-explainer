@@ -1,0 +1,44 @@
+/* vox-explainer: newsprint paper-collage look for Group C pieces (1080x1920). */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#efe6d2}
+#stage{position:absolute;inset:0;overflow:hidden;background:#efe6d2}
+#paper{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+.abs{position:absolute}
+.scene{position:absolute;inset:0;display:none}
+.cam{position:absolute;inset:0;transform-origin:540px 900px}
+
+/* paper pieces: animate .card (transform/opacity only); torn edge + colour live on the static .sheet child */
+.card{position:absolute;filter:drop-shadow(5px 10px 7px rgba(55,38,10,.34))}
+.sheet{position:absolute;inset:0;background:#fbf7ee;display:block}
+.txt{position:relative;padding:26px 34px 22px;text-align:center}
+.y{background:#ffd84a}.ink{background:#1f1d1a}.red{background:#d6261c}.kraft{background:#cdb991}.grey{background:#c4bcad}
+
+/* type */
+.h{font:700 86px/1.04 Georgia,'Times New Roman',serif;color:#141414;text-transform:uppercase;letter-spacing:-1px}
+.s{font-family:Georgia,'Times New Roman',serif;font-weight:700;color:#141414}
+.it{font-style:italic;font-weight:400}
+.lbl{font:700 40px/1.1 Georgia,serif;color:#141414}
+.src{position:absolute;left:70px;right:70px;font:italic 400 28px Georgia,serif;color:#5b5348;text-align:center}
+
+/* highlighter swipe behind a key word: <span class="kw"><i class="hl" id=".."><b class="sheet y" data-tear="6"></b></i><span class="kt">WORD</span></span> */
+.kw{position:relative;display:inline-block}
+.kw .hl{position:absolute;left:-14px;right:-14px;top:34%;bottom:0;transform-origin:0 50%}
+.kw .kt{position:relative}
+
+/* stamps, tape, halftone */
+.stamp{position:absolute;color:#d6261c;border:9px solid #d6261c;font:700 92px/1 Georgia,serif;padding:14px 30px 8px;letter-spacing:3px;white-space:nowrap;text-transform:uppercase;background:rgba(251,247,238,.35)}
+.tape{position:absolute;width:150px;height:46px;background:rgba(226,211,168,.88)}
+.dots{position:absolute;inset:0;background-image:radial-gradient(circle,#1f1d1a 30%,transparent 34%);background-size:24px 24px;-webkit-mask-image:radial-gradient(circle,#000 0%,rgba(0,0,0,.55) 38%,transparent 69%);mask-image:radial-gradient(circle,#000 0%,rgba(0,0,0,.55) 38%,transparent 69%);opacity:.2}
+.dots.r{background-image:radial-gradient(circle,#d6261c 30%,transparent 34%);opacity:.28}
+
+/* small props */
+.person{position:absolute;left:0;top:0;width:56px;height:104px}
+.bill{position:absolute;width:340px;height:190px}
+.bill .txt{padding:30px 24px 0;text-align:left}
+.ln{height:10px;background:#d9cfbb;margin:14px 0 0}
+
+/* overlay: subtitles + torn-sheet beat wipe */
+#sub{position:absolute;left:60px;right:60px;top:1560px;text-align:center}
+#sub span{display:inline-block;background:#1f1d1a;color:#fbf7ee;font:700 44px/1.22 Georgia,serif;padding:12px 26px 12px;max-width:960px}
+#wipe{position:absolute;left:-260px;top:-340px;width:1600px;height:2600px}
+#wipe .sheet{background:#e6d8b8 repeating-linear-gradient(90deg,transparent 0 46px,rgba(80,70,50,.13) 46px 300px,transparent 300px 340px)}

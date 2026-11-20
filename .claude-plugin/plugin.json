@@ -1,8 +1,8 @@
 {
   "name": "kreyator-explainer",
-  "version": "1.1.0",
-  "description": "Short explainer video skills for Reels, TikTok and YouTube Shorts: biografi-explainer (editorial motion graphic biographies, fast Group C render) and whiteboard-explainer (hand-drawn dry-erase marker style). Rendered to MP4.",
+  "version": "1.2.0",
+  "description": "Short explainer video skills for Reels, TikTok and YouTube Shorts: biografi-explainer (editorial motion graphic biographies, fast Group C render), vox-explainer (Vox-style newsprint paper collage, 12 fps stop-motion, Group C render) and whiteboard-explainer (hand-drawn dry-erase marker style). Rendered to MP4.",
   "author": { "name": "Dion" },
   "license": "MIT",
-  "keywords": ["explainer", "biografi", "biography", "whiteboard", "motion-graphics", "short-form", "video", "claude-skill"]
+  "keywords": ["explainer", "biografi", "biography", "vox", "paper-collage", "whiteboard", "motion-graphics", "short-form", "video", "claude-skill"]
 }
