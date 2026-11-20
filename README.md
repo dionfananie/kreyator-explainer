@@ -14,6 +14,18 @@ Agent skills for short explainer videos (Instagram Reels, TikTok, YouTube Shorts
 | **Biografi editorial** | 9:16 motion graphic: photo cards, Anton tags, wipes, burn-in subtitles. Fast "Group C" render (DOM layers exported once, composited with canvas, piped to ffmpeg). | `skills/kreyator-explainer/styles/biografi.md` |
 | **Whiteboard** | Dry-erase marker on a glossy board, marker in hand, felt-eraser scene changes, synthesized marker sound. | `skills/kreyator-explainer/styles/whiteboard.md` |
 
+## Examples
+
+Real outputs made with these skills (downscaled to 540×960 for the repo; the originals are 1080×1920). Click a preview to open the MP4 with sound.
+
+| Biografi editorial | Whiteboard |
+|---|---|
+| [![Biografi example: Pandji Pragiwaksono](docs/examples/biografi-pandji.gif)](docs/examples/biografi-pandji.mp4) | [![Whiteboard example: Rp1 miliar](docs/examples/whiteboard-rp1-miliar.gif)](docs/examples/whiteboard-rp1-miliar.mp4) |
+| **Pandji Pragiwaksono: from radio to the stand-up stage**. 75 s, Group C render, ElevenLabs VO (one take, cut per scene). | **Rp1 miliar tanpa kerja, cukup berapa lama?** 66.5 s, 9:16 whiteboard with marker and eraser sound and ElevenLabs VO. |
+| [MP4](docs/examples/biografi-pandji.mp4) · [Cover](docs/examples/biografi-pandji-cover.jpg) | [MP4](docs/examples/whiteboard-rp1-miliar.mp4) · [Cover](docs/examples/whiteboard-rp1-miliar-cover.jpg) |
+
+Photo credits in the biografi example: Najwa Shihab/Wikimedia Commons (CC BY 3.0), Jawa Pos, via Malay Mail. These are shown on screen.
+
 ## Shared rules (all styles)
 
 - Output: 1080×1920, 9:16, 30 fps, MP4 H.264 + AAC, burn-in subtitles, safe zone 15% top and 20% bottom.

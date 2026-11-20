@@ -1,4 +1,5 @@
 node_modules/
 *.mp4
+!docs/examples/*.mp4
 *.wav
 *.cues.json
