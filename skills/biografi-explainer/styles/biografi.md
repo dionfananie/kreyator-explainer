@@ -1,4 +1,4 @@
-# Kreyator Biografi — video biografi 75 detik (Group C)
+# Biografi Explainer — video biografi 75 detik (Group C)
 
 Hasil: per tokoh satu folder `projects/<nn>-<slug>/` berisi `preview.mp4` (1080×1920, 30 fps, H.264+AAC, tepat 2.250 frame/75 dtk), `cover-XXXX.jpg` (badge bang.oppia), `subs.srt`, `audio/scene_NN.mp3`, `vo-script.md` (naskah + sumber), `caption-metadata.md` (IG/FB, TikTok, YT Shorts). Setelah user approve: salin `preview.mp4` → `final.mp4`.
 

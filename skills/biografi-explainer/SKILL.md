@@ -1,22 +1,17 @@
 ---
 name: biografi-explainer
-description: Pembuat video explainer pendek (Reels/TikTok/Shorts) untuk bang.oppia dengan dua gaya — biografi motion graphic editorial (foto tokoh, render cepat Group C, 75 dtk) dan whiteboard tangan (spidol & penghapus). Gunakan saat diminta membuat, mengulang, atau merevisi video explainer/biografi/whiteboard dari topik atau naskah, termasuk naskah dari Content Creator.
+description: Membuat video biografi tokoh 9:16 (Reels/TikTok/Shorts) untuk bang.oppia bergaya motion graphic editorial — kartu foto, tag Anton, wipe, subtitle burn-in — durasi 75 dtk, VO ElevenLabs satu take, timing otomatis teks↔audio, dan render cepat Group C. Gunakan saat diminta membuat, mengulang, atau merevisi video biografi/profil tokoh dari naskah, termasuk naskah dari Content Creator. Untuk video whiteboard (spidol & papan tulis) pakai skill whiteboard-explainer.
 example-prompt: Buat video dari naskah biografi terbaru Content Creator, 75 detik, VO Jefri v4, jangan dipublish.
 ---
 
 # Biografi Explainer
 
-Satu skill, dua gaya video. File ini berisi aturan bersama dan cara memilih gaya; detail tiap gaya ada di `styles/` dan **dibaca hanya saat gaya itu dipakai**.
+Video biografi editorial 9:16. File ini berisi aturan; langkah lengkap per video ada di `styles/biografi.md` (script di `biografi/scripts/`, contoh di `biografi/references/`).
 
-## Pilih gaya
-| Permintaan | Gaya | Baca |
-|---|---|---|
-| Biografi/profil tokoh, naskah dari Content Creator, video berfoto, "seperti video #22–#37" | **Biografi editorial** (9:16, kartu foto, tag Anton, wipe, subtitle) | `styles/biografi.md` (+ `biografi/scripts/`, `biografi/references/`) |
-| "Whiteboard", gambar tangan, spidol, papan tulis, penjelasan konsep/angka tanpa foto | **Whiteboard** | `styles/whiteboard.md` |
-| Tidak jelas | Tanyakan satu kali dengan dua opsi di atas | — |
+Bukan untuk gaya whiteboard (gambar tangan, spidol, papan tulis, penjelasan konsep/angka tanpa foto): pakai skill `whiteboard-explainer` di paket `kreyator-explainer` yang sama. Bila tidak jelas gaya mana yang diminta, tanyakan satu kali.
 
-## Aturan bersama (semua gaya)
-- **Format:** 1080×1920, 9:16, 30 fps, MP4 H.264 + AAC, subtitle burn-in, safe zone atas 15% & bawah 20%. Whiteboard default 1280×720 → render/adaptasi ke 9:16 bila untuk Reels/TikTok/Shorts.
+## Aturan
+- **Format:** 1080×1920, 9:16, 30 fps, MP4 H.264 + AAC, subtitle burn-in, safe zone atas 15% & bawah 20%.
 - **Durasi:** target 75 dtk. Naskah pendek → tambah fakta yang dicek singkat (catat sumber); jangan mengarang angka, kutipan, atau rekor.
 - **VO:** ElevenLabs, voice Jefri `1ijzBXcD3AIVH8RGMcQd`, model `eleven_v4`, satu take utuh, `generations_count: 1` (jangan generate ulang untuk retry), lalu dipotong per scene. Tag `[curious]` hook, `[warmly]` isi/CTA, `[pause]` antar-scene.
 - **Penutup wajib:** VO dan layar terakhir: "Mau tau hal-hal menarik lainnya? Follow bang oppia."
